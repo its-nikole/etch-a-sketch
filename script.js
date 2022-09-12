@@ -23,8 +23,8 @@ createGrid(8)
 
 // 
 GRID_CONTAINER.addEventListener('mouseover', function(e){
-    if (e.target.parentNode.parentNode) {
-        console.log(e.target.parentNode.parentNode)
+    if (e.target.matches('.square')) {
+        console.log(e.target.matches('.square'))
         e.target.classList.add('coloring')
     }
 })
