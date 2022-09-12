@@ -15,7 +15,16 @@ const createGrid = (gridSize) => {
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
             GRID_CONTAINER.appendChild(divSquare(GRID_CONTAINER.clientWidth / gridSize))
+            console.log(GRID_CONTAINER.clientWidth)
         }
     }
 }
 createGrid(8)
+
+// 
+GRID_CONTAINER.addEventListener('mouseover', function(e){
+    if (e.target.parentNode.parentNode) {
+        console.log(e.target.parentNode.parentNode)
+        e.target.classList.add('coloring')
+    }
+})

@@ -1,9 +1,16 @@
 .grid--container {
+    margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
     border: 1px solid rgb(174, 0, 96);
+    width: 30rem;
+    height: 30rem;
 }
 
 .square {
-    border: 1px solid rgb(174, 0, 96);
+    outline: 1px solid rgb(174, 0, 96);
+}
+
+.coloring {
+    background-color: rgb(226, 43, 144);
 }
