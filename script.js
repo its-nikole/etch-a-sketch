@@ -1,4 +1,5 @@
 const GRID_CONTAINER = document.querySelector('.grid--container')
+const RESET = document.querySelector('.reset--button')
 
 // Creating Square Divs
 const divSquare = (size) => {
@@ -20,6 +21,16 @@ const createGrid = (gridSize) => {
     }
 }
 createGrid(8)
+
+// Reset
+const resetAndLoad = () => {
+    while (GRID_CONTAINER.firstChild) {
+        GRID_CONTAINER.removeChild(GRID_CONTAINER.firstChild);
+    }
+    createGrid(8)
+}
+
+RESET.addEventListener('click', resetAndLoad)
 
 // 
 GRID_CONTAINER.addEventListener('mouseover', function(e){
