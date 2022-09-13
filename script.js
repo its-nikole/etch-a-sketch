@@ -36,6 +36,10 @@ RESET.addEventListener('click', resetAndLoad)
 GRID_CONTAINER.addEventListener('mouseover', function(e){
     if (e.target.matches('.square')) {
         console.log(e.target.matches('.square'))
-        e.target.classList.add('coloring')
+        e.target.style.backgroundColor = 
     }
 })
+
+let selectColor = () => {
+
+}
