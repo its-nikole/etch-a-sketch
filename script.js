@@ -1,5 +1,9 @@
 const GRID_CONTAINER = document.querySelector('.grid--container')
 const RESET = document.querySelector('.reset--button')
+const COLOR_ELEMENT = document.getElementById('color__selector')
+let color = '#EB96EB'
+const RANDOM_COLOR_ELEMENT = document.getElementById('random__color')
+let isRandomColor = false
 
 // Creating Square Divs
 const divSquare = (size) => {
@@ -36,10 +40,23 @@ RESET.addEventListener('click', resetAndLoad)
 GRID_CONTAINER.addEventListener('mouseover', function(e){
     if (e.target.matches('.square')) {
         console.log(e.target.matches('.square'))
-        e.target.style.backgroundColor = 
+        e.target.style.backgroundColor = isRandomColor? generateRandomColor():color
     }
 })
 
-let selectColor = () => {
-
+const selectColor = (e) => {
+    color = e.target.value
+    console.log(e.target.value)
 }
+COLOR_ELEMENT.addEventListener('change', selectColor)
+
+const generateRandomColor = () => {
+    const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`
+    console.log(randomColor)
+    return randomColor
+    
+}
+RANDOM_COLOR_ELEMENT.addEventListener('change', function(e){
+    isRandomColor = e.target.checked
+})
+
