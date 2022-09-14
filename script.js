@@ -51,10 +51,9 @@ const selectColor = (e) => {
 COLOR_ELEMENT.addEventListener('change', selectColor)
 
 const generateRandomColor = () => {
-    const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`
-    console.log(randomColor)
-    return randomColor
-    
+   const hue = Math.floor(Math.random() * 360)
+   const randomColor = `hsl(${hue}, 70%, 80%)`
+   return randomColor
 }
 RANDOM_COLOR_ELEMENT.addEventListener('change', function(e){
     isRandomColor = e.target.checked
